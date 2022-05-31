@@ -20,6 +20,17 @@ public:
     QWMainWind(QWidget *parent = nullptr);
     ~QWMainWind();
 
+private slots:
+    void on_actFontBold_triggered(bool checked);
+
+    void on_actFontItalic_triggered(bool checked);
+
+    void on_actFontUnder_triggered(bool checked);
+
+    void on_textEdit_copyAvailable(bool b);
+
+    void on_textEdit_selectionChanged();
+
 private:
     Ui::QWMainWind *ui;
 

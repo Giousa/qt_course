@@ -1,5 +1,6 @@
 #include "qwmainwind.h"
 #include "ui_qwmainwind.h"
+#include <QDebug>
 
 QWMainWind::QWMainWind(QWidget *parent)
     : QMainWindow(parent)
@@ -50,5 +51,87 @@ void QWMainWind::initUI()
 
     setCentralWidget(ui->textEdit);
 
+}
+
+
+/**
+ * 设置粗体
+ * 注意：若想使按钮的triggered(bool)的值有true，需要勾选Action的Checkable
+ */
+void QWMainWind::on_actFontBold_triggered(bool checked)
+{
+    qDebug() << "Bold_triggered... checked: " << checked;
+
+    //改变选中样式
+    QTextCharFormat fmt = ui->textEdit->currentCharFormat();
+    if(checked){
+        fmt.setFontWeight(QFont::Bold);
+    }else{
+        fmt.setFontWeight(QFont::Normal);
+    }
+    ui->textEdit->mergeCurrentCharFormat(fmt);
+
+    //全部一起改变样式
+//    QFont font = ui->textEdit->font();
+//    font.setBold(checked);
+//    ui->textEdit->setFont(font);
+}
+
+
+/**
+ * 设置斜体
+ * 注意：若想使按钮的triggered(bool)的值有true，需要勾选Action的Checkable
+ */
+void QWMainWind::on_actFontItalic_triggered(bool checked)
+{
+    qDebug() << "Italic_triggered... checked: " << checked;
+//    QFont font = ui->textEdit->font();
+//    font.setItalic(checked);
+//    ui->textEdit->setFont(font);
+    QTextCharFormat fmt = ui->textEdit->currentCharFormat();
+    fmt.setFontItalic(checked);
+    ui->textEdit->mergeCurrentCharFormat(fmt);
+}
+
+/**
+ * 设置下划线
+ * 注意：若想使按钮的triggered(bool)的值有true，需要勾选Action的Checkable
+ */
+void QWMainWind::on_actFontUnder_triggered(bool checked)
+{
+    qDebug() << "Under_triggered... checked: " << checked;
+//    QFont font = ui->textEdit->font();
+//    font.setUnderline(checked);
+//    ui->textEdit->setFont(font);
+
+    QTextCharFormat fmt = ui->textEdit->currentCharFormat();
+    fmt.setFontUnderline(checked);
+    ui->textEdit->mergeCurrentCharFormat(fmt);
+}
+
+
+
+/**
+ * 存在可复制内容
+ */
+void QWMainWind::on_textEdit_copyAvailable(bool b)
+{
+    qDebug() << "copyAvailable... flag: " << b;
+    ui->actCut->setEnabled(b);
+    ui->actCopy->setEnabled(b);
+    ui->actPaste->setEnabled(ui->textEdit->canPaste());
+}
+
+
+/**
+ * 选择的文字发生变化
+ */
+void QWMainWind::on_textEdit_selectionChanged()
+{
+    qDebug() << "selectionChanged...";
+    QTextCharFormat fmt = ui->textEdit->currentCharFormat();
+    ui->actFontBold->setChecked(fmt.font().bold());
+    ui->actFontItalic->setChecked(fmt.fontItalic());
+    ui->actFontUnder->setChecked(fmt.fontUnderline());
 }
 
