@@ -31,6 +31,12 @@ private slots:
 
     void on_textEdit_selectionChanged();
 
+    //自定义槽函数，选择字体
+    void on_comboFont_currentIndexChanged(const QString &arg1);
+
+    //自定义槽函数，改变字体大小
+    void on_spinBoxFontSize_valueChanged(int aFontSize);
+
 private:
     Ui::QWMainWind *ui;
 
@@ -40,5 +46,8 @@ private:
     QFontComboBox *comboFont;
 
     void initUI();
+
+    //初始化关联槽函数和信号
+    void initSignalSlots();
 };
 #endif // QWMAINWIND_H

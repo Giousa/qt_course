@@ -9,6 +9,8 @@ QWMainWind::QWMainWind(QWidget *parent)
     ui->setupUi(this);
 
     initUI();
+
+    initSignalSlots();
 }
 
 QWMainWind::~QWMainWind()
@@ -32,14 +34,14 @@ void QWMainWind::initUI()
     progressBar1->setValue(ui->textEdit->font().pointSize());
     ui->statusbar->addWidget(progressBar1);
 
-    //创建QSpinBox类型组件，设置属性，添加到工具栏
+    //创建QSpinBox【设置字体大小的】类型组件，设置属性，添加到工具栏
     spinFontSize = new QSpinBox;
     spinFontSize->setMinimum(5);
     spinFontSize->setMaximum(50);
     spinFontSize->setValue(ui->textEdit->font().pointSize());
     spinFontSize->setMinimumWidth(50);
 
-    //创建一个QFontComboBox类型组件，添加到工具栏
+    //创建一个QFontComboBox【字体设置的组件】类型组件，添加到工具栏
     comboFont = new QFontComboBox;
 
     //设置
@@ -133,5 +135,30 @@ void QWMainWind::on_textEdit_selectionChanged()
     ui->actFontBold->setChecked(fmt.font().bold());
     ui->actFontItalic->setChecked(fmt.fontItalic());
     ui->actFontUnder->setChecked(fmt.fontUnderline());
+}
+
+
+void QWMainWind::initSignalSlots()
+{
+    connect(spinFontSize,SIGNAL(valueChanged(int)),this,SLOT(on_spinBoxFontSize_valueChanged(int)));
+    connect(comboFont,SIGNAL(currentFontChanged(const QString &)),this,SLOT(on_comboFont_currentIndexChanged(const QString &)));
+}
+
+
+void QWMainWind::on_comboFont_currentIndexChanged(const QString &arg1)
+{
+    qDebug() << "选择字体：：currentIndexChanged...";
+    QTextCharFormat fmt;
+    fmt.setFontFamily(arg1);
+    ui->textEdit->mergeCurrentCharFormat(fmt);
+}
+
+void QWMainWind::on_spinBoxFontSize_valueChanged(int aFontSize)
+{
+    qDebug() << "改变字体大小：：valueChanged...";
+    QTextCharFormat fmt;
+    fmt.setFontPointSize(aFontSize);
+    ui->textEdit->mergeCurrentCharFormat(fmt);
+    progressBar1->setValue(aFontSize);
 }
 
