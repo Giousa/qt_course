@@ -8,3 +8,25 @@
 #### samp2_4
 
 混合设计模式，Action按钮事件触发方式。注意：Action的trigger(bool)事件，若想触发true的话，需要勾选Action的Checkable。
+
+#### samp3_1
+
+元对象、属性、自定义类使用。
+
+#### samp4_1
+
+进制转换。
+
+#### samp4_4
+
+颜色调整和LCD数字展示。
+
+#### samp
+
+
+
+#### samp
+
+
+
+#### samp
