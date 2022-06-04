@@ -9,9 +9,13 @@
 
 混合设计模式，Action按钮事件触发方式。注意：Action的trigger(bool)事件，若想触发true的话，需要勾选Action的Checkable。
 
+## 第3章 类库概述
+
 #### samp3_1
 
 元对象、属性、自定义类使用。
+
+## 第4章 常用界面设计组件
 
 #### samp4_1
 
