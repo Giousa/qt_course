@@ -43,38 +43,38 @@
         <string>QListWidget操作</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout">
-        <item row="3" column="0">
-         <widget class="QPushButton" name="pushButton_4">
-          <property name="text">
-           <string>tBtnListAppend</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QPushButton" name="pushButton_2">
-          <property name="text">
-           <string>tBtnListClear</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QPushButton" name="pushButton_5">
-          <property name="text">
-           <string>tBtnListDelete</string>
-          </property>
-         </widget>
-        </item>
         <item row="0" column="0">
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QToolButton" name="tBtnListIni">
           <property name="text">
            <string>tBtnListIni</string>
           </property>
          </widget>
         </item>
         <item row="2" column="0">
-         <widget class="QPushButton" name="pushButton_3">
+         <widget class="QToolButton" name="tBtnListInsert">
           <property name="text">
            <string>tBtnListInsert</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QToolButton" name="tBtnListAppend">
+          <property name="text">
+           <string>tBtnListAppend</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QToolButton" name="tBtnListClear">
+          <property name="text">
+           <string>tBtnListClear</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QToolButton" name="tBtnListDelete">
+          <property name="text">
+           <string>tBtnListDelete</string>
           </property>
          </widget>
         </item>
@@ -148,7 +148,7 @@
          <widget class="QWidget" name="widget" native="true">
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
-            <widget class="QToolButton" name="toolButton">
+            <widget class="QToolButton" name="tBtnSelectItem">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -173,23 +173,23 @@
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_6">
+            <widget class="QToolButton" name="tBtnSelAll">
              <property name="text">
-              <string>PushButton</string>
+              <string>tBtnSelAll</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_7">
+            <widget class="QToolButton" name="tBtnSelNone">
              <property name="text">
-              <string>PushButton</string>
+              <string>tBtnSelNone</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_8">
+            <widget class="QToolButton" name="tBtnSelInvs">
              <property name="text">
-              <string>PushButton</string>
+              <string>tBtnSelInvs</string>
              </property>
             </widget>
            </item>
