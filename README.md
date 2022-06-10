@@ -33,4 +33,26 @@
 
 组合框。
 
+#### samp4_7
+
+混合界面展示。QListWidget，QTreeWidget，QTableWidget。
+
+#### samp4_8
+
+QTreeWidget：图片管理器
+
+#### samp
+
+#### samp
+
+#### samp
+
+#### samp
+
+#### samp
+
+#### samp
+
+#### samp
+
 #### samp
