@@ -29,19 +29,21 @@
          <height>386</height>
         </rect>
        </property>
-       <widget class="QLabel" name="labPicture">
-        <property name="geometry">
-         <rect>
-          <x>12</x>
-          <y>12</y>
-          <width>58</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>TextLabel</string>
-        </property>
-       </widget>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="labPicture">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
@@ -150,10 +152,31 @@
          </property>
          <item>
           <property name="text">
-           <string/>
+           <string>图片节点</string>
+          </property>
+          <property name="icon">
+           <iconset resource="images.qrc">
+            <normaloff>:/images/icons/31.ico</normaloff>:/images/icons/31.ico</iconset>
           </property>
           <property name="text">
            <string/>
+          </property>
+         </item>
+        </item>
+        <item>
+         <property name="text">
+          <string>分组2</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>图片2</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="images.qrc">
+            <normaloff>:/images/icons/31.ico</normaloff>:/images/icons/31.ico</iconset>
           </property>
          </item>
         </item>

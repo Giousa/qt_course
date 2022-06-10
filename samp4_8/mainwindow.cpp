@@ -7,10 +7,16 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    LabFileName = new QLabel("");
+//    LabFileName = new QLabel("");
+//    ui->statusbar->addWidget(LabFileName);
+//    this->setCentralWidget(ui->scrollArea);
+//    iniTree();
+
+    LabFileName=new QLabel("");
     ui->statusbar->addWidget(LabFileName);
-    this->setCentralWidget(ui->scrollArea);
-    iniTree();
+
+    this->setCentralWidget(ui->scrollArea); //设置中心布局组件
+    iniTree();//初始化目录树
 }
 
 MainWindow::~MainWindow()
@@ -20,6 +26,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::iniTree()
 {
+    qDebug() << "初始化tree";
 //    QString dataStr = "";
 //    ui->treeWidget->clear();
 //    QIcon icon;
