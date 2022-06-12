@@ -45,7 +45,13 @@ QTreeWidget：图片管理器
 
 QTableWidget:  表格管理
 
-#### samp
+## 第五章 Model/View结构
+
+#### samp5_1
+
+QTreeView、QListView、QTableView初步使用。
+
+展示文件夹打开和选择。
 
 #### samp
 
