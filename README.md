@@ -53,7 +53,9 @@ QTreeView、QListView、QTableView初步使用。
 
 展示文件夹打开和选择。
 
-#### samp
+#### samp5_2
+
+QStringList初步使用，配合UI设计的ListView。
 
 #### samp
 
