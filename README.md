@@ -57,7 +57,9 @@ QTreeView、QListView、QTableView初步使用。
 
 QStringList初步使用，配合UI设计的ListView。
 
-#### samp
+#### samp5_3
+
+QStandardItemModel使用。文件打开，采用TableView布局。
 
 #### samp
 

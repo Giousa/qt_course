@@ -136,3 +136,37 @@ void MainWindow::on_actAppend_triggered()
     theSelection->setCurrentIndex(curIndex,QItemSelectionModel::Select);
 }
 
+
+void MainWindow::on_actInsert_triggered()
+{
+
+}
+
+
+void MainWindow::on_actDelete_triggered()
+{
+    QModelIndex curIndex = theSelection->currentIndex();
+    if(curIndex.row() == theModel->rowCount() -1){
+        theModel->removeRow(curIndex.row());
+    }else{
+        theModel->removeRow(curIndex.row());
+        theSelection->setCurrentIndex(curIndex,QItemSelectionModel::Select);
+    }
+
+}
+
+
+void MainWindow::on_actAlignLeft_triggered()
+{
+    if(!theSelection->hasSelection()){
+        return;
+    }
+
+    QModelIndexList selectIndexList = theSelection->selectedIndexes();
+    for (int i = 0;i < selectIndexList.count() ;i++ ) {
+        QModelIndex aIndex = selectIndexList.at(i);
+        QStandardItem *aItem = theModel->itemFromIndex(aIndex);
+        aItem->setTextAlignment(Qt::AlignLeft);
+    }
+}
+
