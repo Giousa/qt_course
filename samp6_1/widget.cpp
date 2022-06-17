@@ -6,6 +6,7 @@
 #include <QColorDialog>
 #include <QFontDialog>
 #include <QInputDialog>
+#include <QMessageBox>
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
@@ -174,5 +175,54 @@ void Widget::on_btnInputItem_clicked()
     }
 
     ui->plainTextEdit->appendPlainText(item);
+}
+
+
+void Widget::on_btnMsgInfo_clicked()
+{
+    QMessageBox::information(this,"这个是标题","这个是描述",QMessageBox::Ok,QMessageBox::NoButton);
+}
+
+
+void Widget::on_btnMsgWarn_clicked()
+{
+    QMessageBox::warning(this,"这个是标题","这个是描述",QMessageBox::Ok,QMessageBox::NoButton);
+}
+
+
+void Widget::on_btnMsgCirtical_clicked()
+{
+//    QMessageBox::critical(this,"这个是标题","这个是描述",QMessageBox::Ok,QMessageBox::NoButton);
+//    ==
+    QMessageBox::critical(this,"这个是标题","这个是描述");
+}
+
+
+void Widget::on_btnMsgAbout_clicked()
+{
+    QMessageBox::about(this,"这个是标题","这个是描述");
+}
+
+
+void Widget::on_btnMsgQues_clicked()
+{
+    int result = QMessageBox::question(this,"这是标题","这个是描述",QMessageBox::Yes|QMessageBox::No|QMessageBox::Cancel,QMessageBox::NoButton);
+    switch (result) {
+        case QMessageBox::Yes:
+        ui->plainTextEdit->appendPlainText("选择了：Yes");
+        break;
+
+        case QMessageBox::No:
+        ui->plainTextEdit->appendPlainText("选择了：No");
+        break;
+
+        case QMessageBox::Cancel:
+        ui->plainTextEdit->appendPlainText("选择了：Cancel");
+        break;
+
+        default:
+        ui->plainTextEdit->appendPlainText("选择了：Default");
+        break;
+    }
 }
 

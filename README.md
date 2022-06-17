@@ -61,7 +61,9 @@ QStringList初步使用，配合UI设计的ListView。
 
 QStandardItemModel使用。文件打开，采用TableView布局。
 
-#### samp
+#### samp6_1
+
+弹出框的使用。
 
 #### samp
 

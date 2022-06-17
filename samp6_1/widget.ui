@@ -74,45 +74,45 @@
          <string>消息框</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_4">
-         <item row="0" column="0">
+         <item row="3" column="1">
+          <widget class="QPushButton" name="btnMsgAboutQt">
+           <property name="text">
+            <string>aboutQt</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
           <widget class="QPushButton" name="btnMsgQues">
            <property name="text">
             <string>question</string>
            </property>
           </widget>
          </item>
-         <item row="0" column="1">
-          <widget class="QPushButton" name="btnMsgInfo">
-           <property name="text">
-            <string>infomation</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QPushButton" name="btnMsgWarn">
-           <property name="text">
-            <string>warning</string>
-           </property>
-          </widget>
-         </item>
          <item row="1" column="1">
-          <widget class="QPushButton" name="btnMsgCirtical">
-           <property name="text">
-            <string>critical</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
           <widget class="QPushButton" name="btnMsgAbout">
            <property name="text">
             <string>about</string>
            </property>
           </widget>
          </item>
-         <item row="2" column="1">
-          <widget class="QPushButton" name="btnMsgAboutQt">
+         <item row="0" column="0">
+          <widget class="QPushButton" name="btnMsgInfo">
            <property name="text">
-            <string>aboutQt</string>
+            <string>infomation</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="btnMsgWarn">
+           <property name="text">
+            <string>warning</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QPushButton" name="btnMsgCirtical">
+           <property name="text">
+            <string>critical</string>
            </property>
           </widget>
          </item>
