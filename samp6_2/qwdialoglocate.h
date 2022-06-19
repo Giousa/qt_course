@@ -19,6 +19,9 @@ public:
 
     void setSpinValue(int rowNo,int colNo);
 
+private slots:
+    void on_btnSetText_clicked();
+
 private:
     Ui::QWDialogLocate *ui;
 

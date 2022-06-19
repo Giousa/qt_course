@@ -1,6 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "qwdialogsize.h"
+#include <QDebug>
+#include <QMessageBox>
+#include <QCloseEvent>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -22,6 +25,25 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+//设置单元格内容
+void MainWindow::setACellText(int row, int col, QString text)
+{
+    QModelIndex localIndex = theModel->index(row,col);
+    theSelection->clearSelection();
+    theSelection->setCurrentIndex(localIndex,QItemSelectionModel::Select);
+    theModel->setData(localIndex,text,Qt::DisplayRole);
+}
+
+void MainWindow::setActLocateEnable(bool flag)
+{
+    ui->actCellLocation->setEnabled(flag);
+}
+
+void MainWindow::setDlgLocateNull()
+{
+    locateDialog = NULL;
 }
 
 //设置行数和列数
@@ -78,6 +100,63 @@ void MainWindow::on_actSetHeadAndTitle_triggered()
 //定位单元格
 void MainWindow::on_actCellLocation_triggered()
 {
+    ui->actCellLocation->setEnabled(false);
+    locateDialog = new QWDialogLocate(this);
+    locateDialog->setAttribute(Qt::WA_DeleteOnClose);
+    Qt::WindowFlags flags = locateDialog->windowFlags();
+    //StayOnTop
+    locateDialog->setWindowFlags(flags | Qt::WindowStaysOnTopHint);
 
+    locateDialog->setSpinRange(theModel->rowCount(),theModel->columnCount());
+    QModelIndex curIndex = theSelection->currentIndex();
+    if(curIndex.isValid()){
+        locateDialog->setSpinValue(curIndex.row(),curIndex.column());
+    }
+    locateDialog->show();
 }
 
+//初始化数据模型
+void MainWindow::on_currentChanged(const QModelIndex &current, const QModelIndex &previous)
+{
+    Q_UNUSED(previous);
+    ui->labelCellCurrent->setText(QString::asprintf("当前单元格：%d行，%d列。",current.row(),current.column()));
+    ui->labelCellText->setText("单元格内容: "+theModel->itemFromIndex(current)->text());
+}
+
+//表格点击
+void MainWindow::on_tableView_clicked(const QModelIndex &index)
+{
+    if(locateDialog != NULL){
+        locateDialog->setSpinValue(index.row(),index.column());
+    }
+
+    emit cellIndexChangedSignals(index.row(),index.column());
+}
+
+
+//窗口关闭触发事件
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    int localQuestion = QMessageBox::question(this,"确定","是否退出本程序？",QMessageBox::Yes|QMessageBox::No,QMessageBox::No);
+    if(localQuestion == QMessageBox::Yes){
+        event->accept();
+    }else{
+        event->ignore();
+    }
+}
+
+
+void MainWindow::setACellTextSlot(int row, int col, QString &text)
+{
+    qDebug() << "setACellTextSlot槽函数：row = " << row << ",col = " << col << ",text = " << text;
+}
+
+void MainWindow::setActLocateEnableSlot(bool flag)
+{
+    qDebug() << "setActLocateEnableSlot槽函数：flag = " << flag;
+}
+
+void MainWindow::cellIndexChangedSignals(int rowNo, int colNo)
+{
+    qDebug() << "cellIndexChangedSignals 信号：rowNo = " << rowNo << ",colNo = " << colNo;
+}

@@ -104,9 +104,9 @@
     <widget class="QWidget" name="widget_2" native="true">
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QPushButton" name="btnSelFont">
+       <widget class="QPushButton" name="btnSetText">
         <property name="text">
-         <string>选择文字</string>
+         <string>设定文字</string>
         </property>
         <property name="icon">
          <iconset resource="res.qrc">

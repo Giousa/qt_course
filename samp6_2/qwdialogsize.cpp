@@ -1,6 +1,7 @@
 #include "qwdialogsize.h"
 #include "ui_qwdialogsize.h"
 #include <QMessageBox>
+#include <QDebug>
 
 QWDialogSize::QWDialogSize(QWidget *parent) :
     QDialog(parent),

@@ -65,7 +65,9 @@ QStandardItemModel使用。文件打开，采用TableView布局。
 
 弹出框的使用。
 
-#### samp
+#### Samp6_2
+
+自定义对话框。
 
 #### samp
 
