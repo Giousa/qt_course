@@ -15,6 +15,9 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QTabWidget" name="tabWidget">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -40,7 +43,7 @@
      <x>0</x>
      <y>0</y>
      <width>827</width>
-     <height>23</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
@@ -68,7 +71,7 @@
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actWindowInsite">
    <property name="icon">
-    <iconset resource="res.qrc">
+    <iconset resource="../../../samp6_3/res.qrc">
      <normaloff>:/images/images/2.ico</normaloff>:/images/images/2.ico</iconset>
    </property>
    <property name="text">
@@ -80,7 +83,7 @@
   </action>
   <action name="actWidgetInsite">
    <property name="icon">
-    <iconset resource="res.qrc">
+    <iconset resource="../../../samp6_3/res.qrc">
      <normaloff>:/images/images/100.bmp</normaloff>:/images/images/100.bmp</iconset>
    </property>
    <property name="text">
@@ -92,7 +95,7 @@
   </action>
   <action name="actQuit">
    <property name="icon">
-    <iconset resource="res.qrc">
+    <iconset resource="../../../samp6_3/res.qrc">
      <normaloff>:/images/images/132.bmp</normaloff>:/images/images/132.bmp</iconset>
    </property>
    <property name="text">
@@ -104,7 +107,7 @@
   </action>
   <action name="actDoc_Open">
    <property name="icon">
-    <iconset resource="res.qrc">
+    <iconset resource="../../../samp6_3/res.qrc">
      <normaloff>:/images/images/122.bmp</normaloff>:/images/images/122.bmp</iconset>
    </property>
    <property name="text">
@@ -116,7 +119,7 @@
   </action>
   <action name="actWindow">
    <property name="icon">
-    <iconset resource="res.qrc">
+    <iconset resource="../../../samp6_3/res.qrc">
      <normaloff>:/images/images/3.ico</normaloff>:/images/images/3.ico</iconset>
    </property>
    <property name="text">
@@ -128,7 +131,7 @@
   </action>
   <action name="actWidget">
    <property name="icon">
-    <iconset resource="res.qrc">
+    <iconset resource="../../../samp6_3/res.qrc">
      <normaloff>:/images/images/804.bmp</normaloff>:/images/images/804.bmp</iconset>
    </property>
    <property name="text">
@@ -140,9 +143,7 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="res.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>actQuit</sender>

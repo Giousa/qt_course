@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QWMainWindow</class>
+ <widget class="QMainWindow" name="QWMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>643</width>
+    <height>402</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QWMainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>20</y>
+      <width>271</width>
+      <height>201</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>643</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actWindowInsite"/>
+   <addaction name="actWidet"/>
+   <addaction name="separator"/>
+   <addaction name="actMainWindowInsite"/>
+   <addaction name="actMainWindow"/>
+   <addaction name="separator"/>
+   <addaction name="actQuit"/>
+  </widget>
+  <action name="actWindowInsite">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/100.bmp</normaloff>:/images/images/100.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>嵌入式Widget</string>
+   </property>
+  </action>
+  <action name="actWidet">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/804.bmp</normaloff>:/images/images/804.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>独立Widget窗口</string>
+   </property>
+  </action>
+  <action name="actMainWindowInsite">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/2.ico</normaloff>:/images/images/2.ico</iconset>
+   </property>
+   <property name="text">
+    <string>嵌入式MainWindow</string>
+   </property>
+  </action>
+  <action name="actMainWindow">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/3.ico</normaloff>:/images/images/3.ico</iconset>
+   </property>
+   <property name="text">
+    <string>独立MainWindow窗口</string>
+   </property>
+  </action>
+  <action name="actQuit">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/images/132.bmp</normaloff>:/images/images/132.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actQuit</sender>
+   <signal>triggered()</signal>
+   <receiver>QWMainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>321</x>
+     <y>200</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
