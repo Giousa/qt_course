@@ -69,6 +69,10 @@ QStandardItemModel使用。文件打开，采用TableView布局。
 
 自定义对话框。
 
-#### samp
+#### Samp6_3
 
-#### samp
+独立窗口。
+
+#### samp6_5
+
+Splash登录页面。
