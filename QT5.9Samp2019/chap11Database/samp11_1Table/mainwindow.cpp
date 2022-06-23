@@ -176,6 +176,10 @@ void MainWindow::on_actOpenDB_triggered()
     if (aFile.isEmpty())  //选择SQL Lite数据库文件
        return;
 
+//    QString aFile = "/Users/zhangmengmeng/Workspace/qt/demodb.db3";
+
+    qDebug() << "数据库文件： " << aFile;
+
 //打开数据库
     DB=QSqlDatabase::addDatabase("QSQLITE"); //添加 SQL LITE数据库驱动
     DB.setDatabaseName(aFile); //设置数据库名称
