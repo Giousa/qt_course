@@ -76,3 +76,9 @@ QStandardItemModel使用。文件打开，采用TableView布局。
 #### samp6_5
 
 Splash登录页面。
+
+## 第13章 多线程
+
+#### samp13_1
+
+多线程使用。
